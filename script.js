@@ -32,10 +32,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Sistema de Login para Área Administrativa
     let isAdmin = false;
-    let adminPassword = "suaSenhaAdmin";
+    const adminPassword = "suaSenhaAdmin";
 
     document.addEventListener("keydown", function(event) {
-        if (event.ctrlKey && event.key === "i") {
+        if (event.ctrlKey && event.key === "k") {
+            event.preventDefault();
             const senha = prompt("Digite a senha administrativa:");
             if (senha === adminPassword) {
                 isAdmin = true;
@@ -91,4 +92,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 const comentarioForm = article.querySelector(".comentario-form");
                 const comentarioLista = comentarioForm.nextElementSibling;
                 comentarioForm.querySelector(".comentario-btn").addEventListener("click", function() {
-                   
+                    const textarea = comentarioForm.querySelector("textarea");
+                    const comentarioTexto = textarea.value.trim();
+
+                    if (comentarioTexto) {
+                        const comentarioItem = document.createElement("div");
+                        comentarioItem.classList.add("comentario-item");
+                        comentarioItem.textContent = comentarioTexto;
+                        comentarioLista.appendChild(comentarioItem);
+
+                        textarea.value = ""; // Limpa o campo de texto
+                    }
+                });
+            }
+        } else {
+            alert("Você precisa fazer login como administrador para publicar notícias.");
+        }
+    });
+});
