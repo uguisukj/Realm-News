@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const adminPassword = "suaSenhaAdmin";
 
     document.addEventListener("keydown", function(event) {
-        if (event.ctrlKey && event.key === "k") {
+        if (event.key === "e" && event.code === "Tab") {
             event.preventDefault();
             const senha = prompt("Digite a senha administrativa:");
             if (senha === adminPassword) {
@@ -46,17 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        // Verifica se a sequência de teclas "564" foi pressionada
-        const secretCode = [53, 54, 52];
-        const typedKeys = [];
-        if (event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 52) {
-            typedKeys.push(event.keyCode);
-            if (typedKeys.length === secretCode.length) {
-                if (typedKeys.every((value, index) => value === secretCode[index])) {
-                    showRegistrationPanel(); // Função para exibir o painel de registro
-                    typedKeys.length = 0; // Limpa o array de teclas digitadas
-                }
-            }
+        // Verifica se a sequência de teclas "E" seguida por "Tab" foi pressionada
+        if (event.key === "Tab" && event.shiftKey && event.code === "KeyE") {
+            showRegistrationPanel(); // Função para exibir o painel de registro
         }
     });
 
