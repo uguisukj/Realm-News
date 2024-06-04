@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Sistema de Registro de Usuário
     document.addEventListener("keydown", function(event) {
-        if (event.altKey && event.key === "Y") {
+        if (event.ctrlKey && event.key === "y") {
             const senha = prompt("Digite a senha:");
             if (senha === "batataassada") {
                 const username = prompt("Digite o nome de usuário:");
