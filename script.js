@@ -45,7 +45,33 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert("Senha incorreta!");
             }
         }
+
+        // Verifica se a sequência de teclas "564" foi pressionada
+        const secretCode = [53, 54, 52];
+        const typedKeys = [];
+        if (event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 52) {
+            typedKeys.push(event.keyCode);
+            if (typedKeys.length === secretCode.length) {
+                if (typedKeys.every((value, index) => value === secretCode[index])) {
+                    showRegistrationPanel(); // Função para exibir o painel de registro
+                    typedKeys.length = 0; // Limpa o array de teclas digitadas
+                }
+            }
+        }
     });
+
+    // Função para exibir o painel de registro
+    function showRegistrationPanel() {
+        const username = prompt("Digite o nome de usuário:");
+        const password = prompt("Digite a senha:");
+
+        if (username && password) {
+            // Aqui você pode implementar a lógica para registrar o usuário
+            alert(`Usuário "${username}" registrado com sucesso!`);
+        } else {
+            alert("Nome de usuário e senha são obrigatórios.");
+        }
+    }
 
     // Sistema de Publicação de Notícias
     const formNoticia = document.getElementById("form-noticia");
