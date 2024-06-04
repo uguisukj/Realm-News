@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jornal Online</title>
+    <title>Realm News</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <!-- Cabeçalho -->
     <header>
         <div class="logo">
-            <h1>Jornal Online</h1>
+            <h1>Realm News</h1>
         </div>
         <nav>
             <ul>
@@ -20,7 +21,7 @@
                 <li><a href="#esportes">Esportes</a></li>
                 <li><a href="#entretenimento">Entretenimento</a></li>
                 <li><a href="#tecnologia">Tecnologia</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a href="#admin">Administração</a></li>
             </ul>
         </nav>
     </header>
@@ -30,35 +31,71 @@
         <!-- Notícias em Destaque -->
         <section id="destaques">
             <h2>Notícias em Destaque</h2>
-            <article class="destaque">
-                <img src="imagem-destaque.jpg" alt="Imagem de Destaque">
-                <h3>Título da Notícia em Destaque</h3>
-                <p>Resumo da notícia em destaque...</p>
-                <div class="interacoes">
-                    <button class="like-btn">Like (<span class="like-count">0</span>)</button>
-                </div>
-                <div class="comentarios">
-                    <h4>Comentários</h4>
-                    <form class="comentario-form">
-                        <textarea placeholder="Adicione um comentário"></textarea>
-                        <button type="button" class="comentario-btn">Comentar</button>
-                    </form>
-                    <div class="comentario-lista">
-                        <!-- Comentários serão adicionados aqui -->
-                    </div>
-                </div>
-                <a href="#">Leia mais</a>
-            </article>
-            <!-- Adicione mais artigos de destaque aqui -->
+            <p id="no-destaques">Nenhuma notícia em destaque foi publicada.</p>
         </section>
 
-        <!-- Outras seções de notícias aqui -->
+        <!-- Categorias de Notícias -->
+        <section id="politica">
+            <h2>Política</h2>
+            <p id="no-politica">Nenhuma notícia de política foi publicada.</p>
+        </section>
 
+        <section id="economia">
+            <h2>Economia</h2>
+            <p id="no-economia">Nenhuma notícia de economia foi publicada.</p>
+        </section>
+
+        <section id="esportes">
+            <h2>Esportes</h2>
+            <p id="no-esportes">Nenhuma notícia de esportes foi publicada.</p>
+        </section>
+
+        <section id="entretenimento">
+            <h2>Entretenimento</h2>
+            <p id="no-entretenimento">Nenhuma notícia de entretenimento foi publicada.</p>
+        </section>
+
+        <section id="tecnologia">
+            <h2>Tecnologia</h2>
+            <p id="no-tecnologia">Nenhuma notícia de tecnologia foi publicada.</p>
+        </section>
     </main>
+
+    <!-- Área Administrativa -->
+    <aside id="admin">
+        <h2>Área Administrativa</h2>
+        <form id="admin-login-form">
+            <label for="senha">Senha Administrativa:</label>
+            <input type="password" id="senha" name="senha" required>
+            <button type="submit">Login</button>
+        </form>
+        <form id="form-noticia">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+
+            <label for="resumo">Resumo:</label>
+            <textarea id="resumo" name="resumo" required></textarea>
+
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" name="conteudo" required></textarea>
+
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" name="categoria" required>
+                <option value="destaques">Destaques</option>
+                <option value="politica">Política</option>
+                <option value="economia">Economia</option>
+                <option value="esportes">Esportes</option>
+                <option value="entretenimento">Entretenimento</option>
+                <option value="tecnologia">Tecnologia</option>
+            </select>
+
+            <button type="submit">Publicar Notícia</button>
+        </form>
+    </aside>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Jornal Online. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Realm News. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
