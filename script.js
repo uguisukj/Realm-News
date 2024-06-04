@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let adminPassword = "suaSenhaAdmin";
 
     document.addEventListener("keydown", function(event) {
-        if (event.ctrlKey && event.key === "k") {
+        if (event.ctrlKey && event.key === "i") {
             const senha = prompt("Digite a senha administrativa:");
             if (senha === adminPassword) {
                 isAdmin = true;
