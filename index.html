@@ -3,68 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realm News</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Site de Notícias</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
-        <div class="logo">
-            <h1>Realm News</h1>
-        </div>
+        <h1>Notícias Online</h1>
         <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#politica">Política</a></li>
-                <li><a href="#economia">Economia</a></li>
-                <li><a href="#esportes">Esportes</a></li>
-                <li><a href="#entretenimento">Entretenimento</a></li>
-                <li><a href="#tecnologia">Tecnologia</a></li>
-            </ul>
+            <a href="#">Home</a>
+            <a href="#">Últimas Notícias</a>
+            <a href="#">Categorias</a>
+            <a href="login.html">Administração</a>
+            <a href="journalist.html">Área do Jornalista</a>
         </nav>
     </header>
-
-    <!-- Área Principal -->
     <main>
-        <!-- Notícias em Destaque -->
-        <section id="destaques">
-            <h2>Notícias em Destaque</h2>
-            <p id="no-destaques">Nenhuma notícia em destaque foi publicada.</p>
-        </section>
-
-        <!-- Categorias de Notícias -->
-        <section id="politica">
-            <h2>Política</h2>
-            <p id="no-politica">Nenhuma notícia de política foi publicada.</p>
-        </section>
-
-        <section id="economia">
-            <h2>Economia</h2>
-            <p id="no-economia">Nenhuma notícia de economia foi publicada.</p>
-        </section>
-
-        <section id="esportes">
-            <h2>Esportes</h2>
-            <p id="no-esportes">Nenhuma notícia de esportes foi publicada.</p>
-        </section>
-
-        <section id="entretenimento">
-            <h2>Entretenimento</h2>
-            <p id="no-entretenimento">Nenhuma notícia de entretenimento foi publicada.</p>
-        </section>
-
-        <section id="tecnologia">
-            <h2>Tecnologia</h2>
-            <p id="no-tecnologia">Nenhuma notícia de tecnologia foi publicada.</p>
+        <section class="noticias">
+            <h2>Últimas Notícias</h2>
+            <article>
+                <h3>Título da Notícia 1</h3>
+                <p>Conteúdo da notícia...</p>
+                <div class="interaction">
+                    <span class="like">Curtir</span>
+                    <span class="comment">Comentários</span>
+                </div>
+                <div class="comments">
+                    <textarea placeholder="Digite seu comentário"></textarea>
+                    <button>Enviar</button>
+                    <div class="comment-list">
+                        <p><strong>Usuário1:</strong> Comentário...</p>
+                        <p><strong>Usuário2:</strong> Comentário...</p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h3>Título da Notícia 2</h3>
+                <p>Conteúdo da notícia...</p>
+                <div class="interaction">
+                    <span class="like">Curtir</span>
+                    <span class="comment">Comentários</span>
+                </div>
+                <div class="comments">
+                    <textarea placeholder="Digite seu comentário"></textarea>
+                    <button>Enviar</button>
+                    <div class="comment-list">
+                        <p><strong>Usuário1:</strong> Comentário...</p>
+                        <p><strong>Usuário2:</strong> Comentário...</p>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
-
-    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Realm News. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Notícias Online. Todos os direitos reservados.</p>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
