@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Sistema de Login para Área Administrativa
     let isAdmin = false;
-    const adminPassword = "suaSenhaAdmin";
+    const adminPassword = "batataassada"; // Senha para acesso à área administrativa
 
+    // Intercepta o evento de teclado para verificar se "Alt + Y" foi pressionado
     document.addEventListener("keydown", function(event) {
         if (event.altKey && event.key === "Y") {
-            event.preventDefault();
             const senha = prompt("Digite a senha administrativa:");
             if (senha === adminPassword) {
                 isAdmin = true;
@@ -45,6 +45,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert("Senha incorreta!");
             }
         }
+    });
+
+    // Intercepta o envio do formulário de registro para impedir a ação padrão
+    registrationForm.addEventListener("submit", function(event) {
+        event.preventDefault();
     });
 
     // Função para exibir o painel de registro
@@ -59,11 +64,6 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Nome de usuário e senha são obrigatórios.");
         }
     }
-
-    // Intercepta o envio do formulário de registro para impedir a ação padrão
-    registrationForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-    });
 
     // Verifica se a sequência de teclas "Alt + Y" foi pressionada
     document.addEventListener("keydown", function(event) {
