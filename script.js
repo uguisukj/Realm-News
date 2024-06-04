@@ -1,21 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
     let isAdmin = false;
+    const adminPassword = "suaSenhaAdmin";
+    const userDatabase = {}; // Banco de dados para armazenar usuários
 
     document.addEventListener("keydown", function(event) {
         if (event.ctrlKey && event.key === "k") {
             event.preventDefault();
             const senha = prompt("Digite a senha administrativa:");
-            if (senha === "suaSenhaAdmin") {
+            if (senha === adminPassword) {
                 isAdmin = true;
                 alert("Login realizado com sucesso!");
             } else {
                 alert("Senha incorreta!");
             }
-        }
-    });
-
-    document.addEventListener("keydown", function(event) {
-        if (event.ctrlKey && event.key === "y") {
+        } else if (event.ctrlKey && event.key === "y") {
             event.preventDefault();
             const senha = prompt("Digite a senha:");
             if (senha === "batataassada") {
@@ -23,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 const password = prompt("Digite a senha:");
 
                 if (username && password) {
-                    // Aqui você pode implementar a lógica para registrar o usuário
+                    // Armazena o usuário no banco de dados
+                    userDatabase[username] = password;
                     alert(`Usuário "${username}" registrado com sucesso!`);
                 } else {
                     alert("Nome de usuário e senha são obrigatórios.");
