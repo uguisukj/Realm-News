@@ -1,37 +1,35 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const adminPassword = "suaSenhaAdmin";
-
-    // Sistema de Login para Área Administrativa
     let isAdmin = false;
+
     document.addEventListener("keydown", function(event) {
         if (event.ctrlKey && event.key === "k") {
             event.preventDefault();
             const senha = prompt("Digite a senha administrativa:");
-            if (senha === adminPassword) {
+            if (senha === "suaSenhaAdmin") {
                 isAdmin = true;
                 alert("Login realizado com sucesso!");
             } else {
                 alert("Senha incorreta!");
             }
-        } else if (event.ctrlKey && event.key === "y") {
-            event.preventDefault();
-            if (isAdmin) {
-                alert("Você já está logado como administrador!");
-            } else {
-                const senha = prompt("Digite a senha:");
-                if (senha === "batataassada") {
-                    const username = prompt("Digite o nome de usuário:");
-                    const password = prompt("Digite a senha:");
+        }
+    });
 
-                    if (username && password) {
-                        // Aqui você pode implementar a lógica para registrar o usuário
-                        alert(`Usuário "${username}" registrado com sucesso!`);
-                    } else {
-                        alert("Nome de usuário e senha são obrigatórios.");
-                    }
+    document.addEventListener("keydown", function(event) {
+        if (event.ctrlKey && event.key === "y") {
+            event.preventDefault();
+            const senha = prompt("Digite a senha:");
+            if (senha === "batataassada") {
+                const username = prompt("Digite o nome de usuário:");
+                const password = prompt("Digite a senha:");
+
+                if (username && password) {
+                    // Aqui você pode implementar a lógica para registrar o usuário
+                    alert(`Usuário "${username}" registrado com sucesso!`);
                 } else {
-                    alert("Senha incorreta!");
+                    alert("Nome de usuário e senha são obrigatórios.");
                 }
+            } else {
+                alert("Senha incorreta!");
             }
         }
     });
