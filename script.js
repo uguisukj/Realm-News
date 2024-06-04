@@ -54,14 +54,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Função para exibir o painel de registro
     function showRegistrationPanel() {
-        const username = prompt("Digite o nome de usuário:");
         const password = prompt("Digite a senha:");
 
-        if (username && password) {
-            // Aqui você pode implementar a lógica para registrar o usuário
-            alert(`Usuário "${username}" registrado com sucesso!`);
+        if (password === adminPassword) {
+            isAdmin = true;
+            alert("Login realizado com sucesso!");
         } else {
-            alert("Nome de usuário e senha são obrigatórios.");
+            alert("Senha incorreta!");
         }
     }
 
