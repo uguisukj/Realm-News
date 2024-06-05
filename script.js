@@ -25,6 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    document.getElementById('admin-login-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        window.location.href = 'admin.html';
+    });
+
+    document.getElementById('journalist-login-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        window.location.href = 'journalist.html';
+    });
+
     document.querySelectorAll('form').forEach(form => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
