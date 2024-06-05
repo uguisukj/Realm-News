@@ -26,7 +26,7 @@ main {
     padding: 2em;
 }
 
-.noticias, .admin-panel, .journalist-panel {
+.noticias, .admin-panel, .journalist-panel, .login {
     background: #fff;
     padding: 1em;
     border-radius: 8px;
